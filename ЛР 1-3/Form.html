@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Простая форма</title>
+</head>
+<body>
+    <a href="Main.html">Главная</a>
+    <!--Форма-->
+<form action="action_form.php" method="POST">
+  <!--Ввод имени, фамилии, логина и пароля-->
+  <p>Моя первая форма:</p>
+    <p>Имя: <input type="text" name="firstname" value=""></p>
+    <p>Фамилия:  <input type="text" name="lastname" value=""></p>
+  
+    <p>Ваш логин: 
+    <input type="text" name="login" size="15" maxlength="30" value="Ваше имя">  
+    </p> 
+    <p>Пароль: <input type="password" name="password" size="15" maxlength="30">  
+    </p>
+    <!--чек-бокс-->
+    <p>Какие музыкальные жанры Вы любите?</p>
+    <ol>
+      <li><input type="checkbox" name="musik" value="juze" checked>Джаз</li>
+      <li><input type="checkbox" name="musik" value="bluse" checked>Блюз</li>
+      <li><input type="checkbox" name="musik" value="rock">Рок</li>
+      <li><input type="checkbox" name="musik" value="shanson">Шансон</li>
+      <li><input type="checkbox" name="musik" value="kantry">Кантри</li>
+    </ol>
+    <!--радио-кнопки-->
+    <p>Сколько Вам лет?</p>
+    <ol>
+      <li><input type="radio" name="age" value="18" checked>младше 18</li>
+      <li><input type="radio" name="age" value="18-24">от 18 до 24</li>
+      <li><input type="radio" name="age" value="25-34">от 25 до 35</li>
+      <li><input type="radio" name="age" value="35-50">более 35</li>
+    </ol>
+    <input type="submit" value="Отправить">
+    <input type="reset" value="Очистить">
+</form>
+</body>
+</html> 

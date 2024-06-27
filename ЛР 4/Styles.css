@@ -1,0 +1,82 @@
+*{ /* Универсальный селектор */
+    font-size: 95%; 
+}
+body {
+    font-family: Arial, Helvetica, sans-serif; 
+    color: black;
+    background-color: rgb(216, 253, 157);
+}
+h2{
+    color:blue;
+}
+table { /* Селектор тэгов */
+    border-collapse: collapse;
+    width: 75%;
+    border-spacing: 15px;
+    background-color:yellowgreen;
+}
+td { /* Селектор тэгов */
+    border: 1px solid black;
+    padding: 10px;
+    background-color:green;
+}
+.example{ /* Класс */
+    color: green;
+    font-weight: bold;
+
+}
+#ad { /* Идентификатор */
+    float: right; 
+    Right: 0;
+    width: 200px; 
+    padding: 5px; 
+    background: lightskyblue; 
+   }
+
+A:link { 
+    color: #036; /* Цвет непосещенных ссылок */
+   }
+A:visited { 
+    color: rgb(56, 102, 0); /* Цвет посещенных ссылок */
+   }
+A:hover { 
+    color: #f00; /* Цвет ссылок при наведении на них курсора мыши */
+   }
+A:active { 
+    color: #ff0; /* Цвет активных ссылок */
+   }
+
+ARTICLE P:first-letter { /* Псевдоэлемент*/
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 200%;
+    color: red;
+}
+DT B{ /* Контекстные селекторы */
+    color: chocolate;
+    font-size: 125%;
+    font-family: sans-serif;
+}
+img {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+video{
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+h4 + p{ /* Соседние селекторы */
+color: chocolate;
+}
+dl > dd{ /* Дочерний селектор */
+font-size: 90%;
+color: #036;
+}
+A[href$=".html"]:link {  /* Селекторы атрибутов */
+        color: rgb(0, 100, 102); /* Цвет непосещенных ссылок */
+}
+A[href$=".html"]:visited { 
+    color: rgb(51, 0, 102); /* Цвет посещенных ссылок */
+}
+li{
+    font-style: italic;
+}
