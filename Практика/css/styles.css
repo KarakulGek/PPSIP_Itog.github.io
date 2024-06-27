@@ -1,0 +1,520 @@
+/*Добавление шрифтов*/
+@font-face {
+    font-family: "Montserrat";
+    src: url("../fonts/Montserrat/Montserrat-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Montserrat";
+    src: url("../fonts/Montserrat/Montserrat-Bold.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Montserrat";
+    src: url("../fonts/Montserrat/Montserrat-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Montserrat";
+    src: url("../fonts/Montserrat/Montserrat-ExtraBold.ttf") format("truetype");
+    font-weight: 800;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Montserrat";
+    src: url("../fonts/Montserrat/Montserrat-Light.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Montserrat";
+    src: url("../fonts/Montserrat/Montserrat-Italic.ttf") format("truetype");
+    font-weight: normal;
+    font-style: italic;
+}
+/*Основные стили*/
+html{
+    font-size: 62.5%;
+}
+body{
+    font-size: 1.3rem;
+    font-family: "Montserrat";
+    line-height: 2.6rem;
+    color: black;
+}
+h1{
+    word-wrap: break-word;
+    font-weight: 800;
+    font-size: 3.5rem;
+    color: rgb(227, 62, 84);
+}
+h2{
+    font-weight: 600;
+    font-size: 3rem;
+}
+/*Стиль контейнера калькулятора*/
+.div-calculator{
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    height: 30rem; 
+    position: relative;
+}
+/*Стили диалогов*/
+dialog{
+    border: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+dialog button{
+    animation: growing 1s ease infinite;
+}
+dialog[open]::backdrop {
+    animation: backdrop-fade 0.5s  ease forwards;
+} 
+/*Анимация затемнения*/
+@keyframes backdrop-fade {
+    from {
+      background: transparent;
+    }
+    to{
+      background: rgba(0, 0, 0, 0.603);
+    }
+}
+/*Стиль стрелки возврата наверх*/
+a.back-to-top {
+	display: none;
+	width: 60px;
+	height: 60px;
+	text-indent: -9999px;
+	position: fixed;
+	z-index: 999;
+	right: 20px;
+	bottom: 20px;
+	background: rgb(234, 102, 40);
+	border-radius: 30px;
+}
+/*Класс для отключения анимации*/
+.no-anim{
+    animation: none;
+}
+.no-anim:hover{
+    transform: none;
+}
+/*Анимация*/
+@keyframes growing{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.3);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+/*Стиль горизонтальной черты*/
+.horizontal-line {
+    display: inline-block;
+    width: 60px;
+    height: 0px;
+    border: 2px solid rgb(227, 62, 84);
+    margin-bottom: 3px;
+}
+/*Стиль карусели*/
+.carousel {
+    position: relative;
+    padding: 10px 40px;
+}
+/*Класс для добавления тени изображению*/
+.img-shadow{
+    filter: drop-shadow(5px 5px 5px #222);
+}
+/*Стиль кнопки*/
+button{
+    background-color: transparent;
+    border: none;
+}
+/*Анимация нажатия кнопок слайдера*/
+.prev:active{
+    transform: perspective(100px) rotateY(-45deg) translateX(-1rem);
+    transition: transform 0.1s;
+}
+.next:active{
+    transform: perspective(100px) rotateY(45deg) translateX(1rem);
+    transition: transform 0.1s;
+}
+/*Класс для радужных кнопок*/
+.glow-on-hover {
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+/*Нажатие на радужную кнопку*/
+.glow-on-hover:active {
+    color: #000;
+}
+.glow-on-hover:active:after {
+    background: transparent;
+}
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+/*Наведение на радужную кнопку*/
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+/*Анимация радужной кнопки*/
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+/*Стиль стрелки*/
+.arrow {
+    position: relative;
+    padding: 0;
+ }
+.arrow:hover {
+
+    cursor: pointer;
+}
+/*Изменения цвета точки списка*/
+li::marker{
+    color:  rgb(234, 102, 40);
+}
+/*Стили карусели*/
+.gallery {
+    overflow: hidden;
+    width: 100vw;
+}
+.gallery ul {
+    width: 9999px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    transition: margin-left 250ms;
+}
+.gallery li {
+    display: inline-block;
+}
+/*Стиль кнопки*/
+.btn{
+    background-color: rgb(33, 83, 89);
+    font-weight: bold;
+    font-size: 10pt;
+    color: white;
+    width: 240px;
+    height: 56px;
+    align-content: center;
+    text-align: center;
+    margin: 5px 10px;
+    perspective: 5rem;
+}
+.btn-orange{
+    background-color: rgb(234, 102, 40);
+}
+/*Наведение на кнопку*/
+.btn:hover{
+    transition: 0.2s ease-in-out;
+    transform: scale(1.1);
+    background: linear-gradient(-45deg, rgb(252, 106, 39), rgb(239, 77, 99), rgb(16, 195, 239), rgb(239, 77, 99), rgb(252, 106, 39));
+    background-size: 400% 400%;
+    animation: gradient 4s infinite;
+}
+/*Анимация переливающегося градиента кнопки*/
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+    50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+/*Нажатие на кнопку*/
+.btn:active{
+    transform-style: preserve-3d;
+    perspective-origin: center;
+    transform: scale(1.2);
+    border-radius: 50px;
+}
+/*Стиль формы*/
+form{
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 20px;
+    margin: 0 -5vw;
+}
+/*Стиль больших полупрозрачных букв*/
+.bigTransparrent{
+    justify-content: center; 
+    align-content:center; 
+    font-size: 8rem; 
+    font-weight: 800; 
+    color: rgb(227, 62, 84); 
+    opacity: 20%; 
+    line-height: 8rem;
+}
+/*Отступ шапки*/
+.header{
+    margin: 0 0 60px;
+}
+/*Стили ссылок*/
+.nav-link{
+    font-size: 1.2rem;
+    color: white;
+}
+.nav-link:hover{
+    color: gray;
+}
+.nav-link:active{
+    color: rgb(227, 62, 84);
+}
+a:hover{
+    cursor: pointer;
+}
+/*Стили картинок, при нажатии на которые осуществляется переход*/
+a img:hover{
+    transition: transform 0.2s ease;
+    transform: scale(1.2);
+    filter: hue-rotate(25deg);
+}
+a img:active{
+    transform: scale(1.5);
+}
+/*Стиль видео*/
+.video{
+    width: 50vw;
+    height: 28.125vw;
+}
+/*Стиль карточки слайдера*/
+.card{
+    width: 200px;
+}
+/*Отступы блоков*/
+.block1{
+    padding: 0 2vw 0 8vw;
+}
+.block2{
+    margin: 100px 0vw;
+    padding: 0 15vw;
+}
+.block3{
+    margin: 100px 0vw;
+    padding: 0 0 0 10vw;
+}
+.block3{
+    margin: 100px 0vw;
+    padding: 0 5vw 0 15vw;
+}
+.block4{
+    margin: 100px 0vw; 
+    padding: 0vh 15vw;
+}
+.block5{
+    margin: 100px 0vw; 
+    padding: 0 5vw 0 10vw;
+}
+.block6{
+    margin: 100px 0vw; 
+    padding: 0 15vw;
+}
+.block7{
+    margin: 100px 0vw; 
+    padding: 0 15vw;
+}
+.block8{
+    margin: 100px 0vw; 
+    padding: 0 15vw;
+}
+.block9{
+    margin: 100px 0vw; 
+    padding: 0 15vw;
+}
+.block10{
+    margin: 100px 0vw; 
+    padding: 0 12vw 0 15vw;
+}
+.block11{
+    margin: 100px 0vw; 
+    padding: 0 10vw 0 15vw;
+}
+/*Стиль подвала*/
+.footer{
+    padding: 5rem 10vw 5rem 10vw;
+    background-color:rgb(12, 47, 51);
+    color: white;
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+.footer h2{
+    font-size: 1.8rem;
+}
+/*Изменение размера шрифта*/
+@media (max-width: 992px){
+    html{
+        font-size: 56.25%;
+    }
+}
+/*Изменение размера видео, шрифта и отступов при изменении размера экрана*/
+@media (max-width: 768px){
+    .video{
+        width: 65vw;
+        height: 36.5625vw;
+    }
+    html{
+        font-size: 50%;
+    }
+    /*Класс исчезающих при среднем размере экрана элементов*/
+    .mediumDis{
+        display: none;
+    }
+    .block1{
+        padding: 0 1vw;
+    }
+    .block2{
+        padding: 0 1vw;
+    }
+    .block3{
+        padding: 0 1vw;
+    }
+    .block3{
+        padding: 0 1vw;
+    }
+    .block4{
+        padding: 0 1vw;
+    }
+    .block5{
+        padding: 0 1vw;
+    }
+    .block6{
+        padding: 0 1vw;
+    }
+    .block7{
+        padding: 0 1vw;
+    }
+    .block8{
+        padding: 0 1vw;
+    }
+    .block9{
+        padding: 0 1vw;
+    }
+    .block10{
+        padding: 0 1vw;
+    }
+    .block11{
+        padding: 0 1vw;
+    }
+    form{
+        margin: 0;
+    }
+}
+/*Изменение размера видео, шрифта и отступов при изменении размера экрана*/
+@media (max-width: 576px){
+    .video{
+        width: 65vw;
+        height: 36.5625vw;
+    }
+    html{
+        font-size: 45%;
+    }
+    /*Класс исчезающих при среднем и маленьком размере экрана элементов*/
+    .mediumDis{
+        display: none;
+    }
+    .smallDis{
+        display: none;
+    }
+    .block1{
+        padding: 0 1vw;
+    }
+    .block2{
+        padding: 0 1vw;
+    }
+    .block3{
+        padding: 0 1vw;
+    }
+    .block3{
+        padding: 0 1vw;
+    }
+    .block4{
+        padding: 0 1vw;
+    }
+    .block5{
+        padding: 0 1vw;
+    }
+    .block6{
+        padding: 0 1vw;
+    }
+    .block7{
+        padding: 0 1vw;
+    }
+    .block8{
+        padding: 0 1vw;
+    }
+    .block9{
+        padding: 0 1vw;
+    }
+    .block10{
+        padding: 0 1vw;
+    }
+    .block11{
+        padding: 0 1vw;
+    }
+
+    form{
+        margin: 0;
+    }
+}
+/*Стили разных иконок*/
+.iconSmall{
+    width: 1.6rem;
+    height: 1.6rem;
+}
+.iconBig{
+    width: 4.8rem;
+    height: 4.8rem;
+}
+.iconLarge{
+    width: 9.6rem;
+    height: 9.6rem;
+}
+.iconSocial{
+    width: 24px;
+    height: 24px;
+}

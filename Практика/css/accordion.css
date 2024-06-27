@@ -1,0 +1,19 @@
+/*Стили гармошки*/
+.ui-accordion{
+    margin-top: 100px;
+    position: relative;
+}
+.ui-accordion .ui-accordion-header {
+	margin: 0 0 10px 0;
+	padding: 10px;
+	border: 1px solid rgb(120, 47, 13);
+	background: rgb(234, 102, 40);
+	cursor: pointer;
+	outline: none;
+}
+.ui-accordion .ui-accordion-content {
+	margin: 0 0 10px 0;
+	padding: 10px;
+	border: 1px solid rgb(8, 83, 92);
+	background: rgb(152, 179, 182);
+}

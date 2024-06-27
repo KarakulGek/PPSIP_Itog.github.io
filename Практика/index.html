@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>Дымоходы</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--Добавления скриптов и стилей Bootstrap, JQuery и JQueryUI-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+        <!--Главные стили-->
+        <link href="css/styles.css" rel="stylesheet">
+        <!--Стили карусели-->
+        <link href="css/carousel.css" rel="stylesheet">
+        <!--Стили гармошки-->
+        <link href="css/accordion.css" rel="stylesheet">
+        <!--Стили калькулятора-->
+        <link href="css/calculator.css" rel="stylesheet">
+        <!--Скрипт кнопки возврата-->
+        <script src="js/topButton.js"></script>
+        <!--Скрипт гармошки-->
+        <script src="js/accordion.js"></script>
+        <!--Скрипт формы-->
+        <script src="js/formValidation.js"></script>
+        <!--Активация скриптов подсказки и выпадающего списка JQuerry-->
+        <script>
+            $( function() {
+              $( document ).tooltip();
+            } );
+        </script>
+        <script>
+            $(document).ready(function(){
+               $('.dropdown-toggle').dropdown()
+           });
+       </script>
+    </head>
+    <body>
+        <!--Основной контейнер-->
+        <main class="main">
+            <!--Стрелка возврата вверх-->
+            <a href="#" class="back-to-top"><img src="img/arrowUp.png" alt="arrow" class="no-anim" style="position: fixed; right: 20px; bottom: 20px; width: 60px; height: 60px;"></a>
+            <!--Шапка на Bootstrap-->
+            <nav class="header navbar navbar-expand-lg sticky-top" data-navbar-on-scroll="data-navbar-on-scroll"  style="background-color: rgb(12, 47, 51);">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="index.html"><img src="img/logo.png" class="iconLarge" alt="logo"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"><img src="img/menu.png" class="iconBig" alt="menu"></button>
+                    <div class="collapse navbar-collapse mt-4 mt-md-0" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">Каталог товаров</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Камины</a>
+                                    <a class="dropdown-item" href="#">Дымоходы</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">Доставка и оплата</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Доставка до пункта</a>
+                                    <a class="dropdown-item" href="#">Доставка на дом</a>
+                                    <a class="dropdown-item" href="#">Без доставки</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">Цены</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Доставки</a>
+                                    <a class="dropdown-item" href="#">Заказа</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">Контакты</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Производитель</a>
+                                    <a class="dropdown-item" href="#">Руководитель</a>
+                                    <a class="dropdown-item" href="#">Обратная связь</a>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item"><a class="nav-link" aria-current="page">+7 (812) 509 21 98</a></li>
+                            <li class="nav-item"><a class="nav-link" aria-current="page">Перезвоните мне</a></li>
+                        </ul>
+                        <div class="d-flex ms-lg-4 mt-lg-0 mt-2">
+                            <a><img src="img/vk.png" class="iconSocial mx-2" alt="vk"></a>
+                            <a><img src="img/telegram.png" class="iconSocial mx-2" alt="telegram"></a>
+                            <a><img src="img/instagram.png" class="iconSocial mx-2" alt="instagram"></a>
+                            <a><img src="img/whatsapp.png" class="iconSocial mx-2" alt="whatsapp"></a>
+                        </div>
+                        <div class="d-flex ms-lg-4 mt-lg-0 mt-4">
+                            <a><img src="img/search.png" class="iconBig mx-2" alt="search"></a>
+                            <a><img src="img/favorite.png" class="iconBig mx-2" alt="favorite"></a>
+                            <a><img src="img/cart.png" class="iconBig mx-2" alt="cart"></a>
+                            
+                        </div>
+                    </div>
+                </div>
+              </nav>
+            <!--Первый блок-->
+            <div class="block1 container-fluid row">
+                <div class="col-md-5 col-sm-6 col-12 order-sm-1 order-2">
+                    <div class="text-sm-start text-center mt-5">
+                        <div class="pb-5 text-nowrap" style="font-size: 6rem; color: black; font-weight: 800;">
+                            Скидка <span style="color: rgb(227, 62, 84)">3%</span>
+                        </div>
+                        <div style="font-size: 2.8rem;">
+                            ны дымоход
+                        </div>
+                        <div style="font-size: 1.2rem; padding: 0 0 50px;">
+                            <ul><li>при покупке комплекта от <span style="color: rgb(76, 133, 139); font-weight: bold;">10 000</span> <span style="color: black; font-weight: bold;">₽</span></li></ul>
+                        </div>
+                        <div class="row g-2 pb-4">
+                            <div class="col-md-auto col-12 pe-5" style="font-size: 3.6rem; color: rgb(227, 62, 84); font-weight: 800;">
+                                16 490 <span style="color: black;">₽</span>
+                            </div>
+                            <div class="col-md-auto col-12" style="font-size: 1.4rem; color: gray; text-decoration: line-through;">
+                                16 490 ₽
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row text-center justify-content-md-between justify-content-center">
+                        <a class="col-sm-6 col-12 btn" role="button">в каталог</a>
+                        <a class="col-sm-6 col-12 btn btn-orange" role="button">монтаж</a>
+                    </div>
+                </div>
+                <div class="col-md-7 col-sm-6 col-12 order-sm-2 order-1 text-end">
+                    <img class="img-fluid img-shadow" src="img/block1.png" alt="chimney">
+                </div>
+            </div>
+            <!--Второй блок: слайдер-->
+            <div id="carousel" class="block2 carousel container-fluid row">
+                <div class="col-6">
+                    <!--Горизонтальная черта-->
+                    <div class="horizontal-line"></div>
+                    <h2>Хиты продаж</h2>
+                </div>
+                <div class="col-6 text-end">
+                    <button class="arrow prev glow-on-hover"><img src="img/arrowLeft.png" class="iconBig" alt="arrowLeft"></button>
+                    <button class="arrow next glow-on-hover"><img src="img/arrowRight.png" class="iconBig" alt="arrowRight"></button>
+                </div>
+                <!--Галерея, содержащая карточки слайдера-->
+                <div class="gallery">
+                  <ul>
+                    <li>
+                        <div class="card container">
+                            <img src="img/block2tovar.png" class="img-fluid" alt="tovar">
+                            <a style="position: absolute; align-self: flex-end; margin: 80% 0 0 0;" role="button"><img src="img/cart2.png" class="iconBig" alt="cart"></a>
+                            <p style="color: rgb(234, 102, 40); font-weight: bold;">Kratki</p>
+                            <p style="font-weight: 600; font-size: 1.5rem;">Каминная топка Kratki ZUZIA LPT 1</p>
+                            <div class="row g-2 pb-4">
+                                <div class="col-md-auto col-12 pe-5" style="font-size: 1.8rem; color: rgb(227, 62, 84); font-weight: bold;">
+                                    16 490 <span style="color: black;">₽</span>
+                                </div>
+                                <div class="col-md-auto col-12" style="font-size: 1.3rem; color: gray; text-decoration: line-through;">
+                                    16 490 ₽
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="card container">
+                            <img src="img/block2tovar.png" class="img-fluid" alt="tovar">
+                            <a style="position: absolute; align-self: flex-end; margin: 80% 0 0 0;" role="button"><img src="img/cart2.png" class="iconBig" alt="cart"></a>
+                            <p style="color: rgb(234, 102, 40); font-weight: bold;">Kratki</p>
+                            <p style="font-weight: 600; font-size: 1.5rem;">Каминная топка Kratki ZUZIA LPT 2</p>
+                            <div class="row g-2 pb-4">
+                                <div class="col-md-auto col-12 pe-5" style="font-size: 1.8rem; color: rgb(227, 62, 84); font-weight: bold;">
+                                    16 490 <span style="color: black;">₽</span>
+                                </div>
+                                <div class="col-md-auto col-12" style="font-size: 1.3rem; color: gray; text-decoration: line-through;">
+                                    16 490 ₽
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="card container">
+                            <img src="img/block2tovar.png" class="img-fluid" alt="tovar">
+                            <a style="position: absolute; align-self: flex-end; margin: 80% 0 0 0;" role="button"><img src="img/cart2.png" class="iconBig" alt="cart"></a>
+                            <p style="color: rgb(234, 102, 40); font-weight: bold;">Kratki</p>
+                            <p style="font-weight: 600; font-size: 1.5rem;">Каминная топка Kratki ZUZIA LPT 3</p>
+                            <div class="row g-2 pb-4">
+                                <div class="col-md-auto col-12 pe-5" style="font-size: 1.8rem; color: rgb(227, 62, 84); font-weight: bold;">
+                                    16 490 <span style="color: black;">₽</span>
+                                </div>
+                                <div class="col-md-auto col-12" style="font-size: 1.3rem; color: gray; text-decoration: line-through;">
+                                    16 490 ₽
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="card container">
+                            <img src="img/block2tovar.png" class="img-fluid" alt="tovar">
+                            <a style="position: absolute; align-self: flex-end; margin: 80% 0 0 0;" role="button"><img src="img/cart2.png" class="iconBig" alt="cart"></a>
+                            <p style="color: rgb(234, 102, 40); font-weight: bold;">Kratki</p>
+                            <p style="font-weight: 600; font-size: 1.5rem;">Каминная топка Kratki ZUZIA LPT 4</p>
+                            <div class="row g-2 pb-4">
+                                <div class="col-md-auto col-12 pe-5" style="font-size: 1.8rem; color: rgb(227, 62, 84); font-weight: bold;">
+                                    16 490 <span style="color: black;">₽</span>
+                                </div>
+                                <div class="col-md-auto col-12" style="font-size: 1.3rem; color: gray; text-decoration: line-through;">
+                                    16 490 ₽
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="card container">
+                            <img src="img/block2tovar.png" class="img-fluid" alt="tovar">
+                            <a style="position: absolute; align-self: flex-end; margin: 80% 0 0 0;" role="button"><img src="img/cart2.png" class="iconBig" alt="cart"></a>
+                            <p style="color: rgb(234, 102, 40); font-weight: bold;">Kratki</p>
+                            <p style="font-weight: 600; font-size: 1.5rem;">Каминная топка Kratki ZUZIA LPT 5</p>
+                            <div class="row g-2 pb-4">
+                                <div class="col-md-auto col-12 pe-5" style="font-size: 1.8rem; color: rgb(227, 62, 84); font-weight: bold;">
+                                    16 490 <span style="color: black;">₽</span>
+                                </div>
+                                <div class="col-md-auto col-12" style="font-size: 1.3rem; color: gray; text-decoration: line-through;">
+                                    16 490 ₽
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="card container">
+                            <img src="img/block2tovar.png" class="img-fluid" alt="tovar">
+                            <a style="position: absolute; align-self: flex-end; margin: 80% 0 0 0;" role="button"><img src="img/cart2.png" class="iconBig" alt="cart"></a>
+                            <p style="color: rgb(234, 102, 40); font-weight: bold;">Kratki</p>
+                            <p style="font-weight: 600; font-size: 1.5rem;">Каминная топка Kratki ZUZIA LPT 6</p>
+                            <div class="row g-2 pb-4">
+                                <div class="col-md-auto col-12 pe-5" style="font-size: 1.8rem; color: rgb(227, 62, 84); font-weight: bold;">
+                                    16 490 <span style="color: black;">₽</span>
+                                </div>
+                                <div class="col-md-auto col-12" style="font-size: 1.3rem; color: gray; text-decoration: line-through;">
+                                    16 490 ₽
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="card container">
+                            <img src="img/block2tovar.png" class="img-fluid" alt="tovar">
+                            <a style="position: absolute; align-self: flex-end; margin: 80% 0 0 0;" role="button"><img src="img/cart2.png" class="iconBig" alt="cart"></a>
+                            <p style="color: rgb(234, 102, 40); font-weight: bold;">Kratki</p>
+                            <p style="font-weight: 600; font-size: 1.5rem;">Каминная топка Kratki ZUZIA LPT 7</p>
+                            <div class="row g-2 pb-4">
+                                <div class="col-md-auto col-12 pe-5" style="font-size: 1.8rem; color: rgb(227, 62, 84); font-weight: bold;">
+                                    16 490 <span style="color: black;">₽</span>
+                                </div>
+                                <div class="col-md-auto col-12" style="font-size: 1.3rem; color: gray; text-decoration: line-through;">
+                                    16 490 ₽
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="card container">
+                            <img src="img/block2tovar.png" class="img-fluid" alt="tovar">
+                            <a style="position: absolute; align-self: flex-end; margin: 80% 0 0 0;" role="button"><img src="img/cart2.png" class="iconBig" alt="cart"></a>
+                            <p style="color: rgb(234, 102, 40); font-weight: bold;">Kratki</p>
+                            <p style="font-weight: 600; font-size: 1.5rem;">Каминная топка Kratki ZUZIA LPT 8</p>
+                            <div class="row g-2 pb-4">
+                                <div class="col-md-auto col-12 pe-5" style="font-size: 1.8rem; color: rgb(227, 62, 84); font-weight: bold;">
+                                    16 490 <span style="color: black;">₽</span>
+                                </div>
+                                <div class="col-md-auto col-12" style="font-size: 1.3rem; color: gray; text-decoration: line-through;">
+                                    16 490 ₽
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="card container">
+                            <img src="img/block2tovar.png" class="img-fluid" alt="tovar">
+                            <a style="position: absolute; align-self: flex-end; margin: 80% 0 0 0;" role="button"><img src="img/cart2.png" class="iconBig" alt="cart"></a>
+                            <p style="color: rgb(234, 102, 40); font-weight: bold;">Kratki</p>
+                            <p style="font-weight: 600; font-size: 1.5rem;">Каминная топка Kratki ZUZIA LPT 9</p>
+                            <div class="row g-2 pb-4">
+                                <div class="col-md-auto col-12 pe-5" style="font-size: 1.8rem; color: rgb(227, 62, 84); font-weight: bold;">
+                                    16 490 <span style="color: black;">₽</span>
+                                </div>
+                                <div class="col-md-auto col-12" style="font-size: 1.3rem; color: gray; text-decoration: line-through;">
+                                    16 490 ₽
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="card container">
+                            <img src="img/block2tovar.png" class="img-fluid" alt="tovar">
+                            <a style="position: absolute; align-self: flex-end; margin: 80% 0 0 0;" role="button"><img src="img/cart2.png" class="iconBig" alt="cart"></a>
+                            <p style="color: rgb(234, 102, 40); font-weight: bold;">Kratki</p>
+                            <p style="font-weight: 600; font-size: 1.5rem;">Каминная топка Kratki ZUZIA LPT 10</p>
+                            <div class="row g-2 pb-4">
+                                <div class="col-md-auto col-12 pe-5" style="font-size: 1.8rem; color: rgb(227, 62, 84); font-weight: bold;">
+                                    16 490 <span style="color: black;">₽</span>
+                                </div>
+                                <div class="col-md-auto col-12" style="font-size: 1.3rem; color: gray; text-decoration: line-through;">
+                                    16 490 ₽
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                  </ul>
+                </div> 
+              </div>
+            <!--Скрипт слайдера-->
+            <script src="js/slider.js"></script>
+            <!--Блок 3-->
+            <div class="block3 container-fluid row">
+                <div class="col-sm-7 col-12">
+                    <h1>САМОСТОЯТЕЛЬНЫЙ</h1>
+                    <h2>расчёт стоимости дымохода</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et</p>
+                    <p>Для расчета стоимости пройдите тест за <span style="color: rgb(234, 102, 40); font-weight: bold;">1 минуту</span></p>
+                    <div class="d-flex justify-content-sm-start justify-content-center">
+                        <div class="btn text-center">Рассчитать стоимость</div>
+                    </div>
+                </div>
+                <!--Калькулятор-->
+                <div class="col-5 div-calculator smallDis">
+                    <img src="img/block3.png" class="img-fluid" alt="calculatorBlob" style="position: absolute; margin-top: 5rem;">
+                    <div class="calculator" style="position: absolute;">
+                        <div class="input" id="input"></div>
+                        <div class="buttons">
+                          <div class="operators">
+                            <div>+</div><div>-</div><div>&times;</div><div>&divide;</div>
+                          </div>
+                          <div class="leftPanel">
+                            <div class="numbers">
+                              <div>7</div><div>8</div><div>9</div>
+                            </div>
+                            <div class="numbers">
+                              <div>4</div><div>5</div><div>6</div>
+                            </div>
+                            <div class="numbers">
+                              <div>1</div><div>2</div><div>3</div>
+                            </div>
+                            <div class="numbers">
+                              <div>0</div><div>.</div><div id="clear">C</div>
+                            </div>
+                          </div><div class="equal" id="result">=</div>
+                        </div>
+                      </div>
+                      <!--Скрипт калькулятора-->
+                    <script src="js/calculator.js"></script>
+                </div>
+            </div>
+            <!--Карусель-->
+            <div class="wrap">
+                <div class="b-carousel js-carousel">
+                    <button class="b-carousel__prev js-carousel__prev glow-on-hover"><img src="img/arrowLeft.png" alt="arrowLeft" style="width: 100%; display: block;"></button>
+                    <button class="b-carousel__next js-carousel__next glow-on-hover"><img src="img/arrowRight.png" alt="arrowRight" style="width: 100%; display: block;"></button>
+                    <div class="b-carousel__wrap js-carousel__wrap">
+                        <div class="b-carousel__item">
+                            <img src="img/carousel1.png" alt="carousel1" class="b-carousel__img">
+                        </div>
+                        <div class="b-carousel__item">
+                            <img src="img/carousel2.png" alt="carousel2" class="b-carousel__img">
+                        </div>
+                        <div class="b-carousel__item">
+                            <img src="img/carousel3.png" alt="carousel3" class="b-carousel__img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Скрипт карусели-->
+            <script src="js/carousel.js"></script>
+            <!--Гармошка-->
+            <div id="accordion">
+                <div class="accordion-item">
+                    <div class="accordion-header">Установка и обслуживание дымоходов: ключевые советы и лучшие практики</div>
+                    <div>
+                      <p>
+                        Введение: Важность правильной установки и обслуживания для безопасности и эффективности.
+                      </p>
+                      <p>
+                        Процесс установки: Выбор места, подготовка материалов, монтаж и герметизация.
+                      </p>
+                      <p>
+                        Безопасность: Предотвращение пожаров, использование огнеупорных материалов, обеспечение вентиляции.
+                      </p> 
+                      <p>
+                        Техническое обслуживание: Регулярные проверки, очистка от сажи, устранение трещин и дефектов.
+                      </p>
+                      <p>
+                        Профессиональные услуги: Когда следует обращаться к специалистам.
+                      </p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">Разновидности дымоходов: от традиционных кирпичных до современных металлических</div>
+                    <div>
+                      <p>
+                        Введение: Важность правильной установки и обслуживания для безопасности и эффективности.
+                      </p>
+                      <p>
+                        Процесс установки: Выбор места, подготовка материалов, монтаж и герметизация.
+                      </p>
+                      <p>
+                        Безопасность: Предотвращение пожаров, использование огнеупорных материалов, обеспечение вентиляции.
+                      </p> 
+                      <p>
+                        Техническое обслуживание: Регулярные проверки, очистка от сажи, устранение трещин и дефектов.
+                      </p>
+                      <p>
+                        Профессиональные услуги: Когда следует обращаться к специалистам.
+                      </p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">Проблемы и их решения: что делать, если дымоход плохо тянет или засорился</div>
+                    <div>
+                      <p>
+                        Введение: Важность правильной установки и обслуживания для безопасности и эффективности.
+                      </p>
+                      <p>
+                        Процесс установки: Выбор места, подготовка материалов, монтаж и герметизация.
+                      </p>
+                      <p>
+                        Безопасность: Предотвращение пожаров, использование огнеупорных материалов, обеспечение вентиляции.
+                      </p> 
+                      <p>
+                        Техническое обслуживание: Регулярные проверки, очистка от сажи, устранение трещин и дефектов.
+                      </p>
+                      <p>
+                        Профессиональные услуги: Когда следует обращаться к специалистам.
+                      </p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">Экологические аспекты использования дымоходов: влияние на окружающую среду и пути минимизации ущерба</div>
+                    <div>
+                      <p>
+                        Введение: Важность правильной установки и обслуживания для безопасности и эффективности.
+                      </p>
+                      <p>
+                        Процесс установки: Выбор места, подготовка материалов, монтаж и герметизация.
+                      </p>
+                      <p>
+                        Безопасность: Предотвращение пожаров, использование огнеупорных материалов, обеспечение вентиляции.
+                      </p> 
+                      <p>
+                        Техническое обслуживание: Регулярные проверки, очистка от сажи, устранение трещин и дефектов.
+                      </p>
+                      <p>
+                        Профессиональные услуги: Когда следует обращаться к специалистам.
+                      </p>
+                    </div>
+                </div>
+            </div>
+            <!--Блок 4-->
+            <div class="block4 container-fluid">
+                <div class="horizontal-line"></div>
+                <h2>Наши преимущества</h2>
+                <div class="row text-md-start text-center">
+                    <div class="col-sm-6 col-12 row">
+                        <div class="col-md-4 col-12 text-center align-self-center mt-5">
+                            <img src="img/block4icon1.png" width="75" alt="consulting">
+                        </div>
+                        <div class="col-md-8 col-12">
+                            <br><b>Бесплатная консультация</b>
+                            <br>Позвонить нам, чтобы получить бесплатную консультацию, на крепёж, стыковку элементов и «вертикальность» 
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-12 row">
+                        <div class="col-md-4 col-12 text-center align-self-center mt-5">
+                            <img src="img/block4icon2.png" width="75" alt="calculation">
+                        </div>
+                        <div class="col-md-8 col-12">
+                            <br><b>Бесплатный просчёт</b>
+                            <br>Оставьте заявку или перезвоните нам на расчёт стоимости монтажа для дома, бани или котельной.
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-12 row">
+                        <div class="col-md-4 col-12 text-center align-self-center mt-5">
+                            <img src="img/block4icon3.png" width="75" alt="expirience">
+                        </div>
+                        <div class="col-md-8 col-12">
+                            <br><b>Большой опыт</b> 
+                            <br>У нас большой опыт установки, монтажа, убедитесь в этом прочитав отзывы и посмотрите фотографии наших работ
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-12 row">
+                        <div class="col-md-4 col-12 text-center align-self-center mt-5">
+                            <img src="img/block4icon4.png" width="75" alt="cleaning">
+                        </div>
+                        <div class="col-md-8 col-12">
+                            <br><b>Чистка дымохода</b> 
+                            <br>Мы производим чистку дымохода с применением современной профессиональной технологии
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Блок 5-->
+            <div class="block5 container-fluid row">
+                <div class="col-md-7 col-120 order-md-1 order-2">
+                    <img class="img-fluid img-shadow" src="img/block5.png" alt="engineer">
+                </div>
+                <div class="col-md-5 col-12 order-md-2 order-1">
+                    <h2>Заказать выезд инженера</h2>
+                    <h1>НА ЗАМЕР</h1>
+                    <p>Оставьте заявку по телефону +7 (812) 509-29-36</p>
+                    <p>Наш Наш инженер-проектировщик приедет в удобное для Вас время, поможет с выбором места установки печи или котла и осуществит замер для Вашего дымохода</p>
+                </div>
+            </div>
+            <!--Блок 6-->
+            <div class="block6 container-fluid">
+                <div class="horizontal-line"></div>
+                <h2>Установка и отношение к работе</h2>
+                <div>
+                    <div class="row">
+                        <div class="col-md-6 col-12">
+                            <p>Правильная установка очень важна, от этого зависит не только красота но и ваша безопасность. Не профессиональная установка газоотводящей системы несёт  большую опасность возникновения пожаров и отравление угарным газом.</p>
+                            <p>В Дымоход ру. работают профессионалы с большим опытом работы, они ежегодно проходят курсы повышения квалификации</p> 
+                            <p style="font-weight: bold;">Все работы проводим качественно, аккуратно, и на совесть</p>
+                        </div>
+                        <div class="col-md-6 mediumDis">
+                            <img class="img-fluid img-shadow" src="img/block6.png" alt="roof">
+                        </div>
+                    </div>
+                    <div class="row mt-3 text-md-start text-center">
+                        <div class="col-md-3 col-sm-6 col-12">
+                            <img src="img/block6icon1.png" width="75" alt="prices">
+                            <br><b>Доступные цены</b>
+                            <p>Мы предлагаем нашу продукцию, услуги по доступным ценам и отличного качества</p>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-12">
+                            <img src="img/block6icon2.png" width="75" alt="installation">
+                            <br><b>Установка</b>
+                            <p>Устанавливаем дымоходы, камины, печи, котлы всех производителей</p>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-12">
+                            <img src="img/block6icon3.png" width="75" alt="professional">
+                            <br><b>Профессионализм</b> 
+                            <p>Квалифицированные специалисты. Работаем чисто, аккуратно, убираем за собой</p>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-12">
+                            <img src="img/block6icon4.png" width="75" alt="garant">
+                            <br><b>Гарантия качества</b>
+                            <p>Мы даём гарантию на все изделия и работы, выполненные нашими специалистами.  </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Блок 7-->
+            <div class="block7 container-fluid row">
+                <div class="horizontal-line"></div>
+                <h2>О компании и цифрах</h2>
+                <div class="col-md-6 col-12 text-sm-start text-center row">
+                    <div class="col-sm-6 col-12">
+                        <h1 style="color: rgb(234, 102, 40);">11</h1>
+                        <p>Магазинов продают нашу продукцию</p>
+                    </div>
+                    <div class="col-sm-6 col-12">
+                        <h1 style="color: rgb(234, 102, 40);">1886</h1>
+                        <p>Выполненных объектов</p>
+                    </div>
+                    <div class="col-sm-6 col-12">
+                        <h1 style="color: rgb(234, 102, 40);">18</h1>
+                        <p>Лет опыта работы на рынке с гарантией качества</p>
+                    </div>
+                    <div class="col-sm-6 col-12">
+                        <h1 style="color: rgb(234, 102, 40);">90%</h1>
+                        <p>Рекомендуют и оббращаются к нам повторно</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mediumDis">
+                    <img class="img-fluid img-shadow" src="img/block7.png" alt="camin">
+                </div>
+            </div>
+            <!--Блок 8-->
+            <div class="block8 container-fluid text-center">
+                <h1 style="color: black;">Оставьте заявку</h1>
+                <p>Или свяжитесь с нами в социальных сетях</p>
+                <div>
+                    <a><img src="img/vk2.png" class="iconSocial" alt="vk" style="margin: 20px;"></a>
+                    <a><img src="img/telegram2.png" class="iconSocial" alt="telegram" style="margin: 20px;"></a>
+                    <a><img src="img/instagram2.png" class="iconSocial" alt="instagram" style="margin: 20px;"></a>
+                    <a><img src="img/whatsapp2.png" class="iconSocial" alt="whatsapp" style="margin: 20px;"></a>
+                </div>
+                <div class="row text-start">
+                    <div class="col-sm-6 col-12">
+                        <ul>
+                            <li>Какой дымоход лучше выбрать?</li>
+                            <li>Сколько стоит монтаж дымохода?</li>
+                            <li>Из какой стали выбрать дымоход?</li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-12">
+                        <ul>
+                            <li>Занимаетесь обслуживанием дымоходов?</li>
+                            <li>Сколько стоит выезд инженера на замер?</li>
+                            <li>Сколько стоит выезд инженера на замер?</li>
+                        </ul>
+                    </div>
+                </div>       
+                <!--Форма-->
+                <form class="mt-5 text-start" name="orderForm" onsubmit="return validateForm()">
+                    <p style="font-size: 1.4rem; font-weight: 600;">Для <span style="color: rgb(234, 102, 40);">заказа</span> замера заполните форму!</p>
+                    <p>С вами свяжутся в ближайшее время</p>
+                    <div class="row g-3 align-items-center justify-content-between">
+                        <div class="col-lg-4 col-12">
+                            <input type="text" name="name" class="form-control col-lg-auto col-12" placeholder="Ваше имя" style="height: 56px; font-size: 1.6rem;" title="Введите ваше имя и фамилию" required>
+                        </div>
+                        <div class="col-lg-4 col-12">
+                            <input type="text" name="phone" class="form-control" placeholder="Ваш телефон" style="height: 56px; font-size: 1.6rem;" title="Введите ваш номер телефона" required>
+                        </div>
+                        <div class="col-lg-auto col-12 text-center">
+                            <input type="submit" class="btn text-center" style="justify-self: center;" title="Оставить заявку" value="оставить заявку">
+                        </div>
+                    </div>
+                    <div id="errorOutput" style="color: red;"></div>
+                </form>
+            </div>
+            <!--Блок 9-->
+            <div class="block9 container-fluid">
+                <div class="horizontal-line"></div>
+                <h2>Видео</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <!--Видео-->
+                <div style="margin: 75px; display: flex; position: relative; height: 23.2vw; align-items: center; justify-content: center;">
+                    <img class="img-fluid img-shadow" src="img/block9blob.png" alt="blob" style="position: absolute;">
+                    <div class="embed-responsive embed-responsive-16by9"  style="position: absolute; z-index: 1;">
+                        <iframe class="video embed-responsive-item img-shadow" src="https://www.youtube.com/embed/2KKRNP3WzqE?si=LU_veNd43BO_EZmy" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+            <!--Блок 10-->
+            <div class="block10 container-fluid row">
+                <div class="horizontal-line"></div>
+                <h2>Причины приобрести нашу продукцию</h2>
+                <div class="col-md-6 col-12 row">
+                    <div class="col-md-12 col-sm-4 col-12 row justify-content-between">
+                        <div class="col-md-2 col-12 bigTransparrent text-center">
+                            1
+                        </div>
+                        <div class="col-md-10 col-12">
+                            <p>Мы предоставляем полный комплекс услуг включающий консультацию и поддержку на всех этапах сотрудничества, от покупки до установки. Дальнейшую очистку дымоходов.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-sm-4 col-12 row justify-content-between">
+                        <div class="col-md-2 col-12 bigTransparrent text-center">
+                            2
+                        </div>
+                        <div class="col-md-10 col-12">
+                            <p>Точное выполнение договорённости, сроков, стоимости и качеству произведенного монтажа, наличие всех необходимых сертификатов и технических документов.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-sm-4 col-12 row justify-content-between">
+                        <div class="col-md-2 col-12 bigTransparrent text-center">
+                            3
+                        </div>
+                        <div class="col-md-10 col-12">
+                            <p>Гарантия на выполненные работы: 
+                            <br><b>3 года</b> на гидроизоляцию кровельных элементов 
+                            <br><b>5 лет</b> на сквозную коррозию внутренней и наружной трубы
+                            <br><b>10 лет</b> на крепёж, стыковку элементов и «вертикальность»</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mediumDis">
+                    <img class="img-fluid img-shadow" src="img/block10.png" alt="reasons">
+                </div>
+            </div>
+            <!--Блок 11-->
+            <div class="block11 container-fluid row">
+                <h2>Купите любую продукцию</h2>
+                <h1>БЕЗ ДЕНЕГ</h1>
+                <div class="col-sm-5 col-12">
+                    <p>Теперь возможна оплата в кредит или в рассрочку 0%. 
+                    <br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                    <div class="d-flex justify-content-sm-start justify-content-center">
+                        <a class="btn" role="button">купить в кредит</a>
+                    </div>
+                </div>
+                <div class="col-sm-7 smallDis">
+                    <img class="img-fluid img-shadow" src="img/block11.png " alt="0%">
+                </div>
+            </div>
+            <!--Подвал-->
+            <div class="footer container-fluid row align-items-start">
+                <div class="col-md-4 mediumDis row">
+                    <h2>КАТАЛОГ</h2>
+                    <div class="col-6">
+                        <a class="nav-link">Дымоходы</a>
+                        <a class="nav-link">Дымососы</a>
+                        <a class="nav-link">Печи для дома</a>
+                        <a class="nav-link">Печи для бани</a>
+                    </div>
+                    <div class="col-6">
+                        <a class="nav-link">Камины</a>
+                        <a class="nav-link">Силикат кальция</a>
+                        <a class="nav-link">Котлы</a>
+                        <a class="nav-link">Ещё</a>
+                    </div>
+                </div>
+                <div  class="col-md-4 mediumDis row">
+                    <h2>ИНФОРМАЦИЯ</h2>
+                    <div class="col-6">
+                        <a class="nav-link">Каталог</a>
+                        <a class="nav-link">Установка и монтаж</a>
+                        <a class="nav-link">Отзывы</a>
+                        <a class="nav-link">Ликвидация товара</a>
+                    </div>
+                    <div class="col-6">
+                        <a class="nav-link">Полезное</a>
+                        <a class="nav-link">Контакты</a>
+                        <a class="nav-link">Оплата и доставка</a>
+                    </div>
+                </div>
+                <div  class="col-md-4 col-12">
+                    <h2 class="mediumDis">ВРЕМЯ РАБОТЫ</h2>
+                    <p class="mediumDis"><img src="img/footerclock.png" alt="clock" class="iconSmall"> <span style="color: rgb(76, 133, 139);">пн-пт</span> 9:00 - 20:00 <span style="color: rgb(76, 133, 139);">сб-вс</span> 10:00-18:00</p>
+                    <p class="mediumDis"><img src="img/footermarker.png" alt="marker" class="iconSmall"> г. Санкт - Петербург ,ул. Тамбасова д.7</p>
+                    <div class="text-center display-flex text-nowrap">
+                        <a><img src="img/vk.png" class="iconSocial" alt="vk" style="margin: 20px;"></a>
+                        <a><img src="img/telegram.png" class="iconSocial" alt="telegram" style="margin: 20px;"></a>
+                        <a><img src="img/instagram.png" class="iconSocial" alt="instagram" style="margin: 20px;"></a>
+                        <a><img src="img/whatsapp.png" class="iconSocial" alt="whatsapp" style="margin: 20px;"></a>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!--Реклама-->
+        <dialog id="ad-dialog">
+            <button style="float: right;" id="close-ad-btn">&#10060;</button>
+            <p>Реклама</p>
+            <div class="card container">
+                <img src="img/block2tovar.png" class="img-fluid" alt="tovar">
+                <a style="position: absolute; align-self: flex-end; margin: 80% 0 0 0;" role="button"><img src="img/cart2.png" class="iconBig" alt="cart"></a>
+                <p style="color: rgb(234, 102, 40); font-weight: bold;">Kratki</p>
+                <p style="font-weight: 600; font-size: 1.5rem;">Каминная топка Kratki ZUZIA LPT 1</p>
+                <div class="row g-2 pb-4">
+                    <div class="col-md-auto col-12 pe-5" style="font-size: 1.8rem; color: rgb(227, 62, 84); font-weight: bold;">
+                        16 490 <span style="color: black;">₽</span>
+                    </div>
+                    <div class="col-md-auto col-12" style="font-size: 1.3rem; color: gray; text-decoration: line-through;">
+                        16 490 ₽
+                    </div>
+                </div>
+            </div>
+        </dialog>
+        <!--Скрипт рекламы-->
+        <script src="js/ad.js"></script>
+    </body>
+</html>
