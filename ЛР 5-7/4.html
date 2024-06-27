@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru" style="height: 100%">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Микросетка</title>
+<style>
+    form{
+        display: grid;
+        grid-template-columns: 300px 1fr; 
+        margin: 20px 50px;
+    }
+    form div{
+        margin: 15px;
+    }
+    body{
+        font-size: 12pt;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    h1{
+        font-size: 16pt;
+        font-weight: bold;
+    }
+    .buy{
+        display: grid;
+        grid-template-columns: 300px 200px; 
+        margin: 20px 50px;
+        gap: 20px;
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+
+</style>    
+</head>
+  <body>
+    <a href="../index.html">Вернуться</a>
+    <form action="action_form.php" method="POST">
+        <div style="grid-column: span 2;"><h1>Новый аккаунт</h1></div>
+        <div>Как к вам обращаться</div>
+        <div><input type="text" name="name" size="40" maxlength="40"></div>
+        <div>Электронная почта</div>
+        <div><input type="text" name="email" size="40" maxlength="40"></div>
+        <div>Пароль</div>
+        <div><input type="password" name="password" size="20" maxlength="30"> <span style="font-size: 8pt; color: grey;">Показать пароль</span></div>
+        <div>Страна</div>
+        <div><select>
+            <option value="Российская федерация">Российская федерация</option>
+            <option value="Беларусь">Беларусь</option>
+            <option value="Польша">Польша</option>
+        </select></div>
+        <div style="grid-row: span 4;">Мобильный телефон</div>
+        <div><input type="text" name="phone" size="20" maxlength="13"></div>
+        <div><input type="checkbox" name="check" value="invite">Пришёл по приглашению</div>
+        <div><input type="checkbox" name="check" value="dogovor">Я принимаю условия <a href="dogovor.txt" style="font-style: italic; text-decoration: underline lightblue;">Договора-оферты</a></div>
+        <div><input type="checkbox" name="check" value="16let">Мне исполнилось 16 лет</div>
+        <div>Код проверки</div>
+        <div><img src="Captcha.png" alt="Captcha"></div>
+        <div></div>
+        <div><input type="submit" value="Зарегистрироваться" style="color: white; background-color: rgb(14, 146, 14); width: 300px; height: 40px; font-size: 20pt; border-radius: 10px; border: 0px; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"></div>
+    </form>
+    <div class="buy">
+      <div style="color: white; background-color: orangered; width: 300px; height: 40px; font-size: 20pt; border-radius: 10px; border: 0px; text-align: center;">Идея подарка</div>
+      <div style="text-align: end;"><img src="XiaomiLogo.png" alt="XiaomiLogo" width="40" height="40"></div>
+      <div style="grid-column: span 2; text-align: center;"><img src="Bracelet.png" alt="Bracelet"></div>
+      <div style="grid-column: span 2; font-size: 20pt; color:rgb(84, 84, 84); font-weight: bold;">Фитнес-браслет Xiaomi Smart Band 7 Pro Black (BHR5970GL)</div>
+      <div style="grid-column: span 2; font-size: 14pt; color: gray; font-weight: bold;"><img src="Check.png" width="15" height="10" alt="Check"> в наличии</div>
+      <div><img src="Star.png" width="150" height="30" alt="Star"></div>
+      <div style="font-size: 18pt; text-align: right; color: gray;">Сравнить <label class="switch">
+          <input type="checkbox">
+          <span class="slider round"></span>
+      </label></div>
+      <div style="grid-column: span 2; font-size: 22pt; font-weight: bold;">Цена: 249,91 руб.</div>
+      <div style="grid-column: span 2; font-size: 16pt; background-color: lightgray; border-radius: 5px; width: 200px; height: 25px; text-align: center;">5 баллов на счёт</div>
+      <div style="grid-column: span 2; font-size: 22pt; color: white; background-color: orangered; border-radius: 20px; height: 40px; text-align: center;">Купить</div>
+  </div>
+  </body>
+</html>

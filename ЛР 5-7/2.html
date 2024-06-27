@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru" style="height: 100%">
+<head>
+<meta charset="UTF-8">
+<title>Резиновая сетка</title>
+<style>
+    .flex-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  height: calc(50% - 10px);
+  margin: 0 auto;
+  padding: 5px;
+  gap: 10px;
+  flex-wrap:nowrap;
+  
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: nowrap;
+  flex-grow: 1;
+  
+}
+
+.flex-item {
+  background-color: #ddd;
+  border: 1px solid #999;
+  
+  text-align: center;
+  flex-grow: 1;
+  padding: 15px 0px 15px;
+
+}
+.grid-container {
+    display: grid;
+    margin: 0 auto;
+    
+    height: calc(50% - 10px);
+    grid-template-columns: repeat(4, 1fr); 
+    padding: 5px;
+    gap: 10px;
+}
+
+.grid-item {
+    background-color: #ddd;
+    border: 1px solid #999;
+    text-align: center;
+
+    padding: 15px 0px 15px;
+}
+
+</style>    
+</head>
+  <body style="height: 100%; margin: 0;">
+    <a href="../index.html">Вернуться</a>
+      <div class="grid-container">
+        <div class="grid-item" style="grid-column: span 4;">Шапка</div>
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+        <div class="grid-item" style="grid-row: span 2;">7</div>
+        <div class="grid-item">8</div>
+        <div class="grid-item">9</div>
+        <div class="grid-item">10</div>
+        <div class="grid-item">11</div>
+    </div>
+    <div class="flex-container">
+        <div class="row">
+          <div class="flex-item" style="flex-grow: 2;">1</div>
+          <div class="flex-item">2</div>
+          <div class="flex-item">3</div>
+        </div>
+        <div class="row">
+          <div class="flex-item">4</div>
+          <div class="flex-item" style="flex-grow: 2;">5</div>
+          <div class="flex-item">6</div>
+        </div>
+        <div class="row">
+            <div class="flex-item" style="flex-grow: 2;">7</div>
+            <div class="flex-item" style="flex-grow: 2;">8</div>
+          </div>
+          <div class="row">
+            <div class="flex-item" style="flex-grow: 4;">Подвал</div>
+          </div>
+      </div>
+  </body>
+</html>
