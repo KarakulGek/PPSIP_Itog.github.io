@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>Дымоходы</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+        <!--Скрипт формы-->
+        <script src="formValidation.js"></script>
+        <style>
+            html{
+    font-size: 62.5%;
+}
+body{
+    font-size: 1.3rem;
+    font-family: "Montserrat";
+    line-height: 2.6rem;
+    color: black;
+}
+h1{
+    word-wrap: break-word;
+    font-weight: 800;
+    font-size: 3.5rem;
+    color: rgb(227, 62, 84);
+}
+h2{
+    font-weight: 600;
+    font-size: 3rem;
+}
+            form{
+                background-color: white;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                padding: 20px;
+                margin: 0 -5vw;
+            }
+        </style>
+    <body>
+        <a href="../index.html">Вернуться</a>
+        <div class="col-6 container-fluid text-center">
+        <!--Форма-->
+        <form class="mt-5 text-start" name="orderForm" onsubmit="return validateForm()">
+            <p style="font-size: 1.4rem; font-weight: 600;">Для <span style="color: rgb(234, 102, 40);">заказа</span> замера заполните форму!</p>
+            <p>С вами свяжутся в ближайшее время</p>
+            <div class="row g-3 align-items-center justify-content-between">
+                <div class="col-lg-4 col-12">
+                    <input type="text" name="name" class="form-control col-lg-auto col-12" placeholder="Ваше имя" style="height: 56px; font-size: 1.6rem;" title="Введите ваше имя и фамилию" required>
+                </div>
+                <div class="col-lg-4 col-12">
+                    <input type="text" name="email" class="form-control col-lg-auto col-12" placeholder="Ваше электронная почта" style="height: 56px; font-size: 1.6rem;" title="Введите вашу электронную почту" required>
+                </div>
+                <div class="col-lg-4 col-12">
+                    <input type="text" id="phone" name="phone" class="form-control" placeholder="Ваш телефон" style="height: 56px; font-size: 1.6rem;" title="Введите ваш номер телефона" required pattern="+375-\d{1,2}\-\d{1,3}\-\d{1,4}">
+                </div>
+                <p>Какие музыкальные жанры Вы любите?</p>
+                <ol>
+                <li><input type="checkbox" class="music" name="music1" value="juze">Джаз</li>
+                <li><input type="checkbox" class="music" name="music2" value="bluse">Блюз</li>
+                <li><input type="checkbox" class="music" name="music3" value="rock">Рок</li>
+                <li><input type="checkbox" class="music" name="music4" value="shanson">Шансон</li>
+                <li><input type="checkbox" class="music" name="music5" value="kantry">Кантри</li>
+                </ol>
+                <!--радио-кнопки-->
+                <p>Сколько Вам лет?</p>
+                <ol>
+                <li><input type="radio" name="age" value="18" checked>младше 18</li>
+                <li><input type="radio" name="age" value="18-24">от 18 до 24</li>
+                <li><input type="radio" name="age" value="25-34">от 25 до 35</li>
+                <li><input type="radio" name="age" value="35-50">более 35</li>
+                </ol>
+                <div class="col-lg-auto col-12 text-center">
+                    <input type="submit" class="btn text-center" style="justify-self: center; font-size: large;" title="Оставить заявку" value="оставить заявку">
+                </div>
+            </div>
+            <div id="errorOutput" style="color: red;"></div>
+        </form>   
+        <script>
+            document.getElementById('phone').addEventListener('input', function (e) {
+                let value = e.target.value.replace(/\D/g, ''); // Удаляем все нечисловые символы
+                let formattedValue = '+375 (';
+    
+                if (value.length > 1) {
+                    formattedValue += value.substring(3, 5);
+                }
+                if (value.length >= 4) {
+                    formattedValue += ') ' + value.substring(5, 8);
+                }
+                if (value.length >= 7) {
+                    formattedValue += '-' + value.substring(8, 10);
+                }
+                if (value.length >= 9) {
+                    formattedValue += '-' + value.substring(10, 12);
+                }
+    
+                e.target.value = formattedValue;
+            });
+        </script>
+    </div>
+    <div>
+        <button onclick="ShowLocalStorage()">Показать локальное хранилище</button>
+        <button onclick="ClearLocalStorage()">Очистить локальное хранилище</button>
+    </div>
+    <div>
+        <button onclick="ShowCookie()">Показать Cookie</button>
+        <button onclick="ClearCookie()">Очистить Cookie</button>
+    </div>
+    </body>
+</html>
